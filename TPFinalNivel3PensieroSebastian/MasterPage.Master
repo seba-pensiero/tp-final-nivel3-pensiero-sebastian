@@ -21,15 +21,18 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="#">Artículos</a>
-                            <a class="nav-link" href="#">Mi Perfil</a>
+                            <a class="nav-link active" aria-current="page" href="/Default.aspx">Artículos</a>
+                            <a class="nav-link" href="/AgregarArticulos.aspx">Agregar Artículos</a>
+                            <a class="nav-link" href="/Perfil.aspx">Mi Perfil</a>
                             <a class="nav-link" href="#">Mis Favoritos</a>
                         </div>
                     </div>
                 </div>
             </nav>
+            <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            </div>
         </div>
     </form>
 </body>
