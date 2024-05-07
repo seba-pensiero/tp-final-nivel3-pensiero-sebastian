@@ -21,7 +21,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="/Default.aspx">Artículos</a>
+                            <a class="nav-link active" aria-current="page" href="/Default.aspx">Home</a>
+                            <a class="nav-link" href="/ListaArticulos.aspx">Lista Artículos</a>
                             <a class="nav-link" href="/AgregarArticulos.aspx">Agregar Artículos</a>
                             <a class="nav-link" href="/Perfil.aspx">Mi Perfil</a>
                             <a class="nav-link" href="#">Mis Favoritos</a>
