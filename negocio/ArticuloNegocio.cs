@@ -21,7 +21,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_WEB_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select A.Id, Codigo, Nombre, A.Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio, C.Id IdCat, C.Descripcion DescCat, M.Id IdMarca, M.Descripcion DescMarca from ARTICULOS A, CATEGORIAS C, MARCAS M where C.Id = A.IdCategoria and M.Id = A.IdMarca";
                 if (id != "")
@@ -185,6 +185,32 @@ namespace negocio
             }
         }
 
+        public void modificarConSp(Articulos articulos)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("storedModificar");
+                datos.setearParametros("@codigo", articulos.Codigo);
+                datos.setearParametros("@nombre", articulos.Nombre);
+                datos.setearParametros("@desc", articulos.Descripcion);
+                datos.setearParametros("@idMarca", articulos.Marca.Id);
+                datos.setearParametros("@idCategoria", articulos.Categoria.Id);
+                datos.setearParametros("@img", articulos.ImagenUrl);
+                datos.setearParametros("@precio", articulos.Precio);
+                datos.setearParametros("@id", articulos.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void eliminar(int id)
         {
             try

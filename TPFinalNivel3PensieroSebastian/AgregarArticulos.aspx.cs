@@ -11,9 +11,12 @@ namespace TPFinalNivel3PensieroSebastian
 {
     public partial class AgregarArticulos : System.Web.UI.Page
     {
+
+        public bool ConfirmaEliminacion { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             txtId.Enabled = false;
+            ConfirmaEliminacion = false;
 
             try
             {
@@ -54,7 +57,7 @@ namespace TPFinalNivel3PensieroSebastian
                     ddlMarca.SelectedValue = seleccionado.Marca.Id.ToString();
                     ddlCategoria.SelectedValue = seleccionado.Categoria.Id.ToString();
                     txtPrecio.Text = seleccionado.Precio.ToString();
-                    txtDescripcion.Text = seleccionado.Descripcion.ToString();
+                    txtDescripcion.Text = seleccionado.Descripcion;
                     txtImagenUrl.Text = seleccionado.ImagenUrl.ToString();
                 }
             }
@@ -84,7 +87,13 @@ namespace TPFinalNivel3PensieroSebastian
                 nuevo.Categoria = new Categorias();
                 nuevo.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
 
-                negocio.agregarConSp(nuevo);
+                if (Request.QueryString["id"] != null)
+                {
+                    nuevo.Id = int.Parse(txtId.Text);
+                    negocio.modificarConSp(nuevo);
+                }
+                else
+                    negocio.agregarConSp(nuevo);
                 Response.Redirect("Default.aspx", false);
             }
             catch (Exception ex)
@@ -103,6 +112,30 @@ namespace TPFinalNivel3PensieroSebastian
         protected void txtImagenUrl_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = true;
+        }
+
+        protected void btnConfirmaEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkConfirmarEliminacion.Checked)
+                {
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+                    negocio.eliminar(int.Parse(txtId.Text));
+                    Response.Redirect("ListaArticulos.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false );
+            }
         }
     }
 }

@@ -32,7 +32,14 @@
             <div class="mb-3">
                 <asp:Button Text="Aceptar" ID="btnAceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" runat="server" />
                 <asp:Button Text="Cancelar" ID="btnCancelar" CssClass="btn btn-primary" BorderColor="Red" BackColor="Red" OnClick="btnCancelar_Click" runat="server" />
+                <asp:Button Text="Eliminar" ID="btnEliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" runat="server" />
             </div>
+            <% if (ConfirmaEliminacion) {  %>
+                <div class="mb-3">
+                    <asp:CheckBox Text="Confirmar Eliminación" ID="chkConfirmarEliminacion" runat="server" />
+                    <asp:Button Text="Eliminar" ID="btnConfirmaEliminar" CssClass="btn btn-danger" OnClick="btnConfirmaEliminar_Click" runat="server" />
+                </div>
+            <% } %>
         </div>
         <div class="col-6">
             <div class="mb-3">
