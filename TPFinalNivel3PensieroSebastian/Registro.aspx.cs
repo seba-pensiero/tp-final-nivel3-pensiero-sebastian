@@ -13,5 +13,10 @@ namespace TPFinalNivel3PensieroSebastian
         {
 
         }
+
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
