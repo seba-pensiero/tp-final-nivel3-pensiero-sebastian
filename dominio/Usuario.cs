@@ -18,8 +18,6 @@ namespace dominio
 
         public string Password { get; set; }
 
-        public DateTime FechaNacimiento { get; set; }
-
         public string ImagenPefil { get; set; }
 
         public bool Admin {  get; set; }
