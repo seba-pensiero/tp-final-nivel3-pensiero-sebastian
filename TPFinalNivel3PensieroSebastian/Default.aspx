@@ -10,7 +10,7 @@
                     <div class="card" style="height: 300px">
                         <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="..." style="height:50%">
                         <div class="card-body">
-                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                            <h5 class="card-title"><a href ="/DetallesArticulo.aspx?id=<%#Eval("Id") %>"><%#Eval("Nombre") %></a></h5>
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                         </div>
                     </div>

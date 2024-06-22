@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="AgregarArticulos.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="DetallesArtículo.aspx" />
+    <Content Include="DetallesArticulo.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaArticulos.aspx" />
@@ -93,12 +93,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DetallesArtículo.aspx.cs">
-      <DependentUpon>DetallesArtículo.aspx</DependentUpon>
+    <Compile Include="DetallesArticulo.aspx.cs">
+      <DependentUpon>DetallesArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DetallesArtículo.aspx.designer.cs">
-      <DependentUpon>DetallesArtículo.aspx</DependentUpon>
+    <Compile Include="DetallesArticulo.aspx.designer.cs">
+      <DependentUpon>DetallesArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>

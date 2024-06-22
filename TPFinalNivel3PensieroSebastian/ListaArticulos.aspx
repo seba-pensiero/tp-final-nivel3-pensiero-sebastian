@@ -63,4 +63,5 @@
         </Columns>
 
     </asp:GridView>
+    <a href="AgregarArticulos.aspx" class="btn btn-primary">Agregar</a>
 </asp:Content>
